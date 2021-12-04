@@ -3,17 +3,17 @@
 #include <stdlib.h>
 #include "matrixs.h"
 using namespace std;
-
+// CeBa: ko ko ko
 int main()
 {
 	setlocale(0, "RUS");
     int size;
-	cout << "Ââåäèòå ðàçìåð ìàòðèöû: ";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã°Ã Ã§Ã¬Ã¥Ã° Ã¬Ã Ã²Ã°Ã¨Ã¶Ã»: ";
 	cin >> size;
 	checking(size);
 	int matrix[100][100], element1[100][100], element2[100][100], element3[100][100];
 	filling_matrix(matrix, size);
-	cout << "Èñõîäíàÿ ìàòðèöà:\n";
+	cout << "ÃˆÃ±ÃµÃ®Ã¤Ã­Ã Ã¿ Ã¬Ã Ã²Ã°Ã¨Ã¶Ã :\n";
 	output(matrix, size);
 
 	copy_matrix(matrix, element1, size);
