@@ -20,7 +20,7 @@ int main()
 	cout << "x^3:\n";
 	raise2degree_matrix(element1, size, 3);
 	output(element1, size);
-
+        cout << "pomogite pomogite pomogite";
 	copy_matrix(matrix, element2, size);
 	cout << "-6x^2:\n";
 	raise2degree_matrix(element2, size, 2);
