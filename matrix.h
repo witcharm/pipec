@@ -1,43 +1,41 @@
-#ifndef MATRIX_H
-#define MATRIX_H
+#ifndef _MATRIX_
+#define _MATRIX_
 
-// Проверка введённых данных на натуральное значение
-void checking_N(int x);
+void readf_matrix(int &size, double matrix[SIZE][SIZE]);
 
-// Создание матрицы
-double** create_matrix(int size);
+//умножает матрицу на число (не меняет исходную матрицу)
+void multiplication_by_number(const int size, const double factor, double matrix[SIZE][SIZE], double result_matrix[SIZE][SIZE]);
 
-// Очитска памяти, занимаемой матрицей
-void free(double** matr, int size);
+void copy_matrix(const int size, double matrix[SIZE][SIZE], double result_matrix[SIZE][SIZE]);
 
-// Вывод матрицы на экран
-void output(double** matr, int size);
+//функция по поиску матрицы произведения двух матриц
+void multiplication_of_two_matrix(const int size, double matrix_1[SIZE][SIZE], double matrix_2[SIZE][SIZE], double result_matrix[SIZE][SIZE]);
 
-// Создание минора по заданным строке и столбцу
-double** create_minor(double** matr, int size, int row, int col);
+//вычисление суммы двух матриц
+void calc_sum_two_matrix(const int size, double matrix_1[SIZE][SIZE], double matrix_2[SIZE][SIZE], double result_matrix[SIZE][SIZE]);
 
-// Нахождение определителя матрицы
-double determinant(double** matr, int size);
+//составляет минор входной матрицы по i-ому j-ому элементу 
+void make_minor(const int size, double matrix[SIZE][SIZE], const int str, const int col, double result_matrix[SIZE][SIZE]);
 
-// Нахождение обратной матрицы (перед вызовом нужна проверка на det != 0)
-double** revers_matrix(double** matr, int size);
+//вычисляет определитель квадратной матрицы
+double calc_determ(const int size, double matrix[SIZE][SIZE]);
 
-// Сложение двух матриц 
-double** summation_matrixs(double** matr1, double** matr2, int size);
+//вычисляет обратную матрицу (проверить отличность определителя от 0 при вызове)
+bool calc_inverse_matrix(const int size, double matrix[SIZE][SIZE], double result_matrix[SIZE][SIZE]);
 
-// Прибавление к матрице числа 
-double** summation_matrix_num(double** matr, int size, double num);
+//вывод матрицы
+void output_matrix(const int n, double matrix[SIZE][SIZE]);
 
-// Умножение матрицы на число
-double** multiply_matrix_num(double** matr, int size, double num);
+//создаёт в файле inputL.txt левую матрицу
+void create_L_matrix(const double numbers[]);
 
-// Умножение 2х матриц
-double** multiply_matrixs(double** matr1, double** matr2, int size);
+//создаёт в файле inputR.txt правую матрицу
+void create_R_matrix(const double numbers[]);
 
-// Вычисление f(x)^2 , где f(x) = x^3-6x^2-5x+10 (вывод каждого шага)
-double** main_func(double** matrix, int size);
+//проверяет истинность указанного равенства
+bool eqils_check(const double numbers[], double (left_matrix)[3][3], double (right_matrix)[3][3]);
 
-// Вычисление значения системы уравнений 2X + Y = C1  и  X - 2Y = C2
-void main_func(double** C1, double** C2);
+//решает матричное уравнение вида XAB - XC = 2C
+void solve_matrix_equation(const int size_A, const int size_B, const int size_C, double matrix_A[SIZE][SIZE], double matrix_B[SIZE][SIZE], double matrix_C[SIZE][SIZE]);
 
-#endif // MATRIX_H
+#endif //_MATRIX_
